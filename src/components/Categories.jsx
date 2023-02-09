@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { Context } from "../pages/Home.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import { changeCategory } from "../redux/slices/filterSlice.js";
 const Categories = () => {
-  const { selectedCategory, setCategory } = useContext(Context);
-
+  const state = useSelector((state) => state.filter.selectedCategoryRedux);
+  const dispatch = useDispatch();
   const category = [
     "Все",
     "Мясные",
@@ -18,8 +18,8 @@ const Categories = () => {
           return (
             <li
               key={index}
-              onClick={() => setCategory(index)}
-              className={selectedCategory === index ? "active" : ""}
+              onClick={() => dispatch(changeCategory(index))}
+              className={state === index ? "active" : ""}
             >
               {item}
             </li>
@@ -30,3 +30,4 @@ const Categories = () => {
   );
 };
 export default Categories;
+//setCategory(index)
