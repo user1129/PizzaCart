@@ -30,4 +30,4 @@ const Categories = () => {
   );
 };
 export default Categories;
-//setCategory(index)
+

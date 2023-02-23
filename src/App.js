@@ -5,9 +5,10 @@ import "./assets/app.css";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
-
+import CartEmpty from './pages/CartEmpty'
+import Login from "./pages/Login";
 function App() {
-  return (
+  return ( 
     <div className="App">
       <div className="wrapper">
         <Header />
@@ -15,6 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/cartEmpty" element={<CartEmpty />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>

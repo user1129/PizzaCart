@@ -17,7 +17,13 @@ const Header = () => {
           </Link>
           <Search/>
           <div className="header__cart">
-            <Link to="/cart" className="button button--cart">
+            <Link to = 'login' className="button button--cart" style={{marginRight:'-100px'}}>
+              <span>Войти</span>
+            </Link>
+          </div>
+          
+          <div className="header__cart">
+            <Link to = {cart.items.length > 0 ? '/cart' : '/cartEmpty'}  className="button button--cart">
               <span>{cart.totalPrice} ₽</span>
               <div className="button__delimiter"></div>
               <svg
